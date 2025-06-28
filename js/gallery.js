@@ -72,14 +72,14 @@ container.insertAdjacentHTML('afterbegin', createGallery(images));
 container.addEventListener("click", handleClick);
 
 function createGallery(arr) {
-  return arr.map(item => `
+  return arr.map(({ preview, original, description }) => `
     <li class="gallery-item">
-      <a class="gallery-link", href="${item.original}">
+      <a class="gallery-link" href="${original}">
         <img
           class="gallery-image"
-          data-source="${item.original}"
-          src="${item.preview}"
-          alt="${item.description}"
+          data-source="${original}"
+          src="${preview}"
+          alt="${description}"
         />
       </a>
     </li>
